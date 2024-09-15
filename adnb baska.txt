@@ -126,7 +126,7 @@ if (testMode === true) {
         timeLimit = 3;
         scoreLimit = 11;
 
-        roomName = "🏀 【ADNB】| basquete x3";
+        roomName = "🏀 【ADNB】| basquete x2";
         publicRoom = true;
         maxPlayers = 30;
 
@@ -141,7 +141,7 @@ var room = HBInit({
     public: publicRoom,
     noPlayer: true,
     token: '',
-    geo: { "lat": -24, "lon": -41, "code": "AR" }
+    geo: { "lat": -24, "lon": -41, "code": "us" }
 });
 
 var vipNames = {
@@ -814,7 +814,7 @@ var odblue = 0
 /* OPTIONS */
 
 var drawTimeLimit = 1;
-var teamSize = 3;
+var teamSize = 2;
 var maxAdmins = 0;
 var disableBans = false;
 var debugMode = false;
