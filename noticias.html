@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notícias - NeskoBank</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="favicon.ico" type="image/icon" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <script src="https://kit.fontawesome.com/7433d3320f.js" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+        }
+        .navbar {
+            background-color: #800080;
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #dcdcdc !important;
+        }
+        .news-item {
+            margin-bottom: 30px;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .news-item h2 {
+            font-size: 1.75rem;
+            color: #800080;
+        }
+        .news-item p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+        .newsletter-signup {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 30px;
+        }
+        .newsletter-signup h3 {
+            color: #800080;
+        }
+        .footer {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+        }
+        .footer a {
+            color: #ddd;
+        }
+        .footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">NeskoBank</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="noticias.html">Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">NeskoBank</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="sobre.html">Sobre</a>
+                    </li>
+                </ul>
+                <form class="d-flex">
+                    <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-light" type="submit">Buscar</button>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mt-5">
+        <h1 class="mb-4">Notícias do NeskoBank</h1>
+        <div class="news-item">
+            <h2>Expansão Internacional do NeskoBank</h2>
+            <p>
+                O NeskoBank está empolgado em anunciar sua expansão para novos mercados internacionais. Com o objetivo de trazer nossas soluções financeiras inovadoras para clientes em todo o mundo, estamos trabalhando para oferecer nossos serviços em vários países da Europa e América Latina.
+            </p>
+        </div>
+        <div class="news-item">
+            <h2>Nova Funcionalidade no App</h2>
+            <p>
+                Nossa equipe de desenvolvimento acaba de lançar uma nova funcionalidade no aplicativo NeskoBank. Agora, os usuários podem personalizar ainda mais suas notificações e ter acesso a uma visão detalhada de suas despesas, tornando o gerenciamento financeiro ainda mais eficiente.
+            </p>
+        </div>
+        <div class="news-item">
+            <h2>Parceria com Startups de Fintech</h2>
+            <p>
+                O NeskoBank firmou uma nova parceria com startups de fintech para promover a inovação no setor financeiro. Esta colaboração permitirá a integração de novas tecnologias e serviços, proporcionando aos nossos clientes uma experiência bancária ainda mais moderna e eficiente.
+            </p>
+        </div>
+
+        <div class="newsletter-signup">
+            <h3>Assine Nossa Newsletter</h3>
+            <p>Receba as últimas notícias e atualizações do NeskoBank diretamente em seu e-mail.</p>
+            <form>
+                <div class="mb-3">
+                    <label for="email" class="form-label">Endereço de E-mail</label>
+                    <input type="email" class="form-control" id="email" required />
+                </div>
+                <button type="submit" class="btn btn-primary">Inscrever-se</button>
+            </form>
+        </div>
+    </main>
+
+    <footer class="footer text-center">
+        <div class="container">
+            <p>© 2024 NeskoBank. Todos os direitos reservados.</p>
+            <p>
+                <a href="noticias.html">Início</a> |
+                <a href="index.html">NeskoBank</a> |
+                <a href="contato.html">Contato</a> |
+                <a href="sobre.html>Sobre</a>
+            </p>
+            <p>Redes Sociais:</p>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-twitter"></i></a>
+            <a class="btn btn-outline-light btn-floating m-1" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
