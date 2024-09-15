@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cellnesko</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="icon" href="favicon.ico" type="image/icon" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #6a0dad; /* Fundo roxo */
+            color: #ffffff; /* Texto branco */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        #iframe-container {
+            background-color: rgba(255, 255, 255, 0.1); /* Fundo semi-transparente */
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra suave */
+        }
+        .progress-bar {
+            background-color: #ffdf00; /* Barra de progresso dourada */
+        }
+        p {
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        .alert-primary {
+            background-color: #ffd700;
+            color: #6a0dad;
+            border: none;
+            font-weight: bold;
+        }
+        #start-preview-placeholder svg {
+            fill: #ffffff;
+        }
+        #start-app-button {
+            cursor: pointer;
+        }
+        #app-starting-spinner {
+            animation: spin 1.5s linear infinite;
+        }
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="col-10 col-lg-5 mx-auto py-2 py-lg-0 text-center" id="iframe-container">
+        <div id="preview-progress-bar" hidden="">
+            <div class="progress w-50 mx-auto mt-5">
+                <div class="progress-bar" role="progressbar" style="width: 93.4155%;" aria-valuemin="0%" aria-valuemax="100%" aria-valuenow="93.41551989825466%"></div>
+            </div>
+            <p>Estamos construindo a prévia do seu app. Ela estará pronta em 1-2 minutos...</p>
+            <div id="delay-alert">
+                <div class="alert alert-primary d-inline-block">
+                    Parece que preparar sua prévia está levando mais tempo do que o esperado. Você pode continuar esperando aqui, mas também enviaremos um e-mail quando estiver pronta.
+                </div>
+            </div>
+        </div>
+        <iframe width="233px" height="490px" scrolling="no" style="border: 0; border-radius: 10px;" id="appetize-iframe" src="https://appetize.io/embed/mqqwgb6izvtlgmcukguesgihbe?device=pixel7&amp;scale=57.3943661971831&amp;orientation=portrait&amp;centered=true&amp;deviceColor=black&amp;language=pt_BR&amp;params=%5Bobject%20Object%5D"></iframe>
+        <div id="start-preview-placeholder" hidden="">
+            <script>
+                function onClickStartButton() {
+                    document.getElementById("app-starting-spinner").removeAttribute("hidden");
+                    document.getElementById("start-app-button").setAttribute("hidden", "hidden");
+                    document.getElementById("start-app-button").removeAttribute("onclick");
+                    document.getElementById("start-app-button").removeAttribute("href");
+                    document.getElementById("text-link").removeAttribute("onclick");
+                    document.getElementById("text-link").removeAttribute("href");
+                    document.querySelector("#text-link b").textContent = "Iniciando...";
+                    startAppNoParams();
+                }
+                function resetStartPreviewPlaceholder() {
+                    document.getElementById("app-starting-spinner").setAttribute("hidden", "hidden");
+                    document.getElementById("start-app-button").removeAttribute("hidden");
+                    document.getElementById("start-app-button").setAttribute("onclick", "onClickStartButton();");
+                    document.getElementById("start-app-button").setAttribute("href", "javascript:;");
+                    document.getElementById("text-link").setAttribute("onclick", "onClickStartButton();");
+                    document.getElementById("text-link").setAttribute("href", "javascript:;");
+                    document.querySelector("#text-link b").textContent = "Iniciar App";
+                }
+            </script>
+            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 57.113 114.54" height="75vh">
+                <g transform="translate(-130.202 -130.353)">
+                    <rect style="opacity:1;fill:#fff;fill-opacity:1;stroke-width:.179486;stroke-miterlimit:4;stroke-dasharray:none" width="51.601" height="4.122" x="132.81" y="133.259" ry="0"></rect>
+                    <path style="opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:.999999" d="M35.945 0C15.117 0 0 15.117 0 35.945v362.786c0 20.828 13.35 34.177 34.177 34.177h146.894c20.828 0 32.409-12.667 32.41-33.495V149.258h2.378v-46.383h-2.379V35.213C213.48 14.385 200.22 0 179.393 0Zm2.065 10.914c65.459.183 109.029 0 138.719 0 15.551.002 28.158 12.609 28.16 28.16v356.96c.003 15.554-12.605 28.166-28.16 28.17H38.009c-15.554-.004-28.162-12.616-28.16-28.17V39.073c.002-15.551 12.61-28.158 28.16-28.16Z" transform="matrix(.26458 0 0 .26458 130.202 130.353)"></path>
+                    <foreignObject y="181" x="132.5" width="52" height="30" class="text-center">
+                        <a class="text-regular" id="text-link"><b style="font-size: 0.25rem; font-weight: 600;">Iniciando...</b></a>
+                    </foreignObject>
+                </g>
+                <a id="start-app-button" hidden="hidden">
+                    <g transform="scale(0.03) translate(740 1700)">
+                        <path d="M229.5,0C102.751,0,0,102.751,0,229.5S102.751,459,229.5,459S459,356.249,459,229.5S356.249,0,229.5,0z M310.292,239.651
+                        l-111.764,76.084c-3.761,2.56-8.63,2.831-12.652,0.704c-4.022-2.128-6.538-6.305-6.538-10.855V153.416
+                        c0-4.55,2.516-8.727,6.538-10.855c4.022-2.127,8.891-1.857,12.652,0.704l111.764,76.084c3.359,2.287,5.37,6.087,5.37,10.151
+                        C315.662,233.564,313.652,237.364,310.292,239.651z"></path>
+                    </g>
+                </a>
+                <g transform="scale(2)" id="app-starting-spinner">
+                    <path class="rotate-around-center" style="fill:#ffffff;fill-opacity:1;stroke-width:.316675" d="M17.2 28.3a2.736 2.713 78.197 0 0-.702-1.309 2.736 2.713 78.197 0 0-3.836-.07 2.736 2.713 78.197 0 0-.767 2.513l.605-.126a2.194 2.096 78.197 0 1 .579-2.013 2.194 2.096 78.197 0 1 2.969.079 2.194 2.096 78.197 0 1 .555 1.075 2.194 2.096 78.197 0 1-.574 2.02l-.005.005a2.194 2.096 78.197 0 1-1.016.556l.112.537a2.736 2.713 78.197 0 0 1.319-.704l.007-.006a2.736 2.713 78.197 0 0 .755-2.556z"></path>
+                </g>
+            </svg>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
